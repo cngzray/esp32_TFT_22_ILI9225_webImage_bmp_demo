@@ -1,4 +1,4 @@
-esp32连接2.2寸TFT屏幕演示
+esp32 wroom连接2.2寸TFT屏幕演示
 
 驱动是 ILI9225
 
