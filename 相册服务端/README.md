@@ -12,9 +12,9 @@ python app.py
 
 http://localhost:3000
 
-
 在界面输入jpg图片的链接，提交后程序会自动转换为tft屏幕可显示的规格，保存在uploads目录内
 
+ 启动服务器后，访问 http://localhost:3000/random-bmp 即可直接获取随机的 BMP 图片数据（非 HTML 页面）。
 
 <img width="300"  alt="image" src="https://github.com/user-attachments/assets/a79f54a7-f26e-47ed-b7d4-cbd5145d923a" />
 
