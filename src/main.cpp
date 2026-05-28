@@ -20,7 +20,7 @@ TFT_22_ILI9225 tft = TFT_22_ILI9225(TFT_RST, TFT_RS, TFT_CS, TFT_LED, 255);
 const char* ssid = "xxx";
 const char* password = "xxx";
 const char* imageUrl = "http://10.20.2.27:3000/random-bmp";
-//const char* imageUrl = "https://pub-1251799822.file.myqcloud.com/tft_pic004.bmp";
+
 
 // BMP文件头结构体
 #pragma pack(push, 1)
