@@ -1,25 +1,9 @@
-esp32 wroom连接2.2寸TFT屏幕演示
+采用 opendata.adsb.fi 的 ADS-B 数据源进行飞机雷达演示
 
-驱动是 ILI9225
+踩过的坑
+1. 用arduinoJson库经常出现内存溢出崩溃等情况，最后还是采取保守的字符串解析的方式进行数据处理，稳定运行
+2. ADS-B / 航空里的方位角 dir：0° 代表正北，顺时针增加（90°= 东，180°= 南，270°= 西）。 三角函数库的 cos/sin：0° 代表x 轴正方向（通常是东），逆时针增加（90°= 北，180°= 西，270°= 南）。 所以，你直接把 dir 转成弧度用，方向会整体逆时针转了 90°，比如： 正北方向（dir=0°），按你的公式算出来 cos(0)=1、sin(0)=0，结果是向东偏移，而不是向北。
+   // 航空方位角（正北0°，顺时针）→ 数学坐标系角度（东为0°，逆时针）
+float angleRad = (90.0f - dir) * PI / 180.0f;
 
-连接wifi，并从网上下载demo图片显示
-
-图片：bmp, 176x220 , 16bit
-
-// ESP32引脚定义
-
-#define TFT_RST 26
-
-#define TFT_RS  25
-
-#define TFT_CLK 18  // VSPI-SCK
-
-#define TFT_SDI 23  // VSPI-MOSI
-
-#define TFT_CS  5   // VSPI-SS
-
-#define TFT_LED 4   // GPIO4 for backlight
-
-<img width="300" alt="image" src="https://github.com/user-attachments/assets/ee929fc8-73ef-4362-9da8-568547092f64" />
-
-补充： 2.2inch Arduino SPI Module ILI9225 SKU:MAR2201 官方wiki链接 https://www.lcdwiki.com/zh/2.2inch_Arduino_SPI_Module_ILI9225_SKU:MAR2201
+<img width="301" height="451" alt="image" src="https://github.com/user-attachments/assets/9943e428-25fd-4508-bf91-116057723b1a" />
