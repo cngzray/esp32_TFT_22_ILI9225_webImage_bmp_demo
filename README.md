@@ -26,7 +26,7 @@ Python 3.7 及以上
 
 ### 依赖库
 - Flask
-
+- Flask>=2.0.0
 一键安装依赖：
 ```bash
 pip install flask
@@ -75,8 +75,3 @@ const char* imageUrl = "http://192.168.1.100:5000/getImage";
 4. 如需修改监听端口，直接修改app.py内 `app.run(port=5000)` 参数
 5. 如需切换图片，替换bmp目录内文件，无需修改代码
 
-Flask>=2.0.0
-```
-
-
-补充： 2.2inch Arduino SPI Module ILI9225 SKU:MAR2201 官方wiki链接 https://www.lcdwiki.com/zh/2.2inch_Arduino_SPI_Module_ILI9225_SKU:MAR2201
